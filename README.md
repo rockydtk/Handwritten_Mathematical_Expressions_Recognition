@@ -8,7 +8,7 @@ This is the project that we finished after the 8th week of studying **Machine Le
 
 ## INTRODUCTION
 ### 1. Handwritten Mathematical Expressions Recognition
-If you've ever had to typeset mathematical expressions, you might have thought: wouldn’t it be great if I could just take a picture of a handwritten expression and have it be recognized automatically? Can you use computer vision to recognize handwritten mathematical expressions? In this project, we will prove to you that we can!
+If you've ever had to typeset mathematical expressions, you might have thought: wouldn’t it be great if I could just take a picture of a handwritten expression and have it be recognized automatically? Can you use computer vision to recognize handwritten mathematical expressions? In this project, we will prove that we can!
 
 ### 2. Project goals
 - Building model to classify **Handwritten Mathematical Expressions** (Numbers and Operators) images.
