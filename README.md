@@ -1,4 +1,4 @@
-# Handwritten Equation Solver
+# Handwritten Mathematical Expressions Recognition
 ### Khiem T. Do, Phuong T.M. Chu & Santhos
 
 ## INTRODUCTION
