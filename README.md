@@ -43,6 +43,8 @@ For simplicity, in this project, we only take into account 4 math operators: `pl
 During the data cleanning process, we can see that it is biased for some of the digits/symbols, as it contains 12000 images for some symbol and 3000 images for others. To remove this bias, reduce the number of images in each folder to approximately 4000.
 
 ## BUILDING MODELS
+In this project, we only built the model for recognizing math operators. We used prebuilt handwritten number recognition model from our previous project (MNIST project).
+
 ### 1. Load and preprocess images
 **Extracting Features**
 
@@ -53,10 +55,20 @@ We can use contour extraction to obtain features.
 - Now, resize the maximum area bounding rectangle to 28 by 28. Reshape it to 784 by 1. So there will be now 784-pixel values or features. Now, give the corresponding label to it (For e.g., for 0–9 images same label as their digit, for – assign label 10, for + assign label 11, for times assign label 12). So now our dataset contains 784 features column and one label column.
 - After extracting features, save the data to a CSV file.
 
-### 2. Building model
-### 3. Training model
-### 4. Model performance summary
-### 5. Making prediction and recognition
+### 2. Training model
+```python
+# Create an linear SVM object
+clf = LinearSVC()
+
+# Perform the training
+clf.fit(X_train_hog, y_train)
+
+# Save the classifier
+joblib.dump(clf, "model_cls_operator.pkl", compress=3)
+```
+### 3. Model performance summary
+![](https://i.imgur.com/gLsJMDw.png)
+### 4. Making prediction and recognition
 We perform our prediction with the assumption that we only have the calculation consists of 1 digit numbers, and one of 4 math operators (`+`, `-`, `*`, `/`) followed after the number, no additional math symbols are used. 
 For example: `1 * 2 - 3 + 4`
 
