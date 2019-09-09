@@ -17,8 +17,6 @@ If you've ever had to typeset mathematical expressions, you might have thought: 
 
 ### 3. Project plan
 Main steps:
-1. Build Handwritten Equation Solver locally on OpenCV
-2. Make Handwritten Equation Solver Flask App
 
 |Task|Progress|
 |:-----------------------------|:------------:|
@@ -40,7 +38,7 @@ Main steps:
 For simplicity, in this project, we only take into account 4 math operators: `plus`,`minus`,`addition`, and `division`.
 
 ### 2. Data Collection process 
-During the data cleanning process, we can see that it is biased for some of the digits/symbols, as it contains 12000 images for some symbol and 3000 images for others. To remove this bias, reduce the number of images in each folder to approximately 4000.
+During the data cleanning process, we can see that it is biased for some of the digits/symbols, as it contains 12.000 images for some symbol and 3.000 images for others. To remove this bias, reduce the number of images in each folder to approximately 4.000.
 
 ## BUILDING MODELS
 You can have more details by walking through our 2 Jupyter notebooks.
