@@ -45,5 +45,5 @@ During the data cleanning process, we can see that it is biased for some of the 
 ## BUILDING MODELS
 ### Dataset
 ### Model performance summary
-
+![](https://i.imgur.com/pSWkopG.png)
 ## CONCLUSION
