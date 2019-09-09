@@ -57,6 +57,50 @@ We can use contour extraction to obtain features.
 ### 3. Training model
 ### 4. Model performance summary
 ### 5. Making prediction and recognition
+We perform our prediction with the assumption that we only have the calculation consists of 1 digit numbers, and one of 4 math operators (`+`, `-`, `*`, `/`) followed after the number, no additional math symbols are used. 
+For example: `1 * 2 - 3 + 4`
+
+```python
+plt.figure(figsize=(10,4))
+s=""
+
+for index, (c, _) in enumerate(cnts):
+    (x, y, w, h) = cv2.boundingRect(c)
+
+    if w >=7 and h>=20:
+        roi = gray[y:y+h, x:x+w]
+        thresh = roi.copy()
+        T = mahotas.thresholding.otsu(roi)
+        thresh[thresh > T] = 255
+        thresh = cv2.bitwise_not(thresh)
+
+        thresh_digit = deskew(thresh, 28)
+        thresh_digit = center_extent(thresh_digit, (28,28))
+        thresh_operator = deskew(thresh, 28)
+        thresh_operator = center_extent(thresh_operator, (28,28))
+
+        predictions_digit = model_digit.predict(np.expand_dims(thresh_digit, axis=0))
+        predictions_operator = model_operator.predict(extract_hog(np.reshape(thresh_operator, (1, -1))))
+        
+        digits = np.argmax(predictions_digit[0])
+
+        cv2.rectangle(image, (x,y), (x+w, y+h), (0,255,0), 2)
+        
+        if index % 2 == 0:
+            cv2.putText(image, str(digits), (x,y+70), cv2.FONT_HERSHEY_SIMPLEX, 2, (0,255,0), 2)
+            s = s+str(digits)
+        else:
+            cv2.putText(image, labels_name[predictions_operator[0]], (x+10,y-10), cv2.FONT_HERSHEY_SIMPLEX, 2, (0,255,0), 2)
+            s = s+labels_name[predictions_operator[0]]
+            
+plt.imshow(imutils.opencv2matplotlib(image))
+plt.show()
+print("The result is:",eval(s))
+```
+
+Example of output
+
+![](https://i.imgur.com/Wxou2t8.png)
 
 ## BUILDING THE FLASK APP
 <p align="center">
