@@ -43,7 +43,7 @@ For simplicity, in this project, we only take into account 4 math operators: `pl
 During the data cleanning process, we can see that it is biased for some of the digits/symbols, as it contains 12000 images for some symbol and 3000 images for others. To remove this bias, reduce the number of images in each folder to approximately 4000.
 
 ## BUILDING MODELS
-### Dataset
+### 1. Load and preprocess images
 **Extracting Features**
 We can use contour extraction to obtain features.
 - Invert the image and then convert it to a binary image because contour extraction gives the best result when the object is white, and surrounding is black.
@@ -51,8 +51,11 @@ We can use contour extraction to obtain features.
 - Since each image in our dataset contains only one symbol/digit, we only need the bounding rectangle of maximum size. For this purpose, we calculate the area of the bounding rectangle of each contour and select the rectangle with maximum area.
 - Now, resize the maximum area bounding rectangle to 28 by 28. Reshape it to 784 by 1. So there will be now 784-pixel values or features. Now, give the corresponding label to it (For e.g., for 0–9 images same label as their digit, for – assign label 10, for + assign label 11, for times assign label 12). So now our dataset contains 784 features column and one label column.
 - After extracting features, save the data to a CSV file.
-### Model performance summary
 
+### 2. Building model
+### 3. Training model
+### 4. Model performance summary
+### 5. Making prediction and recognition
 
 ## BUILDING THE FLASK APP
 <p align="center">
