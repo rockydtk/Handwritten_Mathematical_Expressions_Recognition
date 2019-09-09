@@ -43,7 +43,7 @@ During the data cleanning process, we can see that it is biased for some of the 
 ## BUILDING MODELS
 You can have more details by walking through our 2 Jupyter notebooks.
 
-In this project, we only built the model for recognizing math operators. We used prebuilt handwritten number recognition model `handwritten_model.h5` from our previous project [(MNIST project)](). 
+In this project, we only built the model for recognizing math operators. We used prebuilt handwritten number recognition model `handwritten_model.h5` from other project [(MNIST project)](). 
 
 ### 1. Extracting Features
 
@@ -150,6 +150,6 @@ gcloud app deploy
 ```
 
 ## CONCLUSION
-We successfully built 2 models which are used together to classify **Handwritten Mathematical Expressions** (Numbers and Operators) images with high accuracy of **97%** (for predicting numbers [from previous project]()) and accuracy of **94.88%** (for predicting math operators).
+We successfully built 2 models which are used together to classify **Handwritten Mathematical Expressions** (Numbers and Operators) images with high accuracy of **99.49%** (for predicting numbers [from other project]()) and accuracy of **94.88%** (for predicting math operators).
 
 In addition, we also **built a Flask application** so user user can upload the images and perform calculation.
