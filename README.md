@@ -45,6 +45,7 @@ During the data cleanning process, we can see that it is biased for some of the 
 ## BUILDING MODELS
 ### 1. Load and preprocess images
 **Extracting Features**
+
 We can use contour extraction to obtain features.
 - Invert the image and then convert it to a binary image because contour extraction gives the best result when the object is white, and surrounding is black.
 - To find contours use ‘findContour’ function. For features, obtain the bounding rectangle of contour using ‘boundingRect’ function (Bounding rectangle is the smallest horizontal rectangle enclosing the entire contour).
