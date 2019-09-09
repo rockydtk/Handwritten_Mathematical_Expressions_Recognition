@@ -11,7 +11,7 @@ This is the project that we finished after the 8th week of studying **Machine Le
 If you've ever had to typeset mathematical expressions, you might have thought: wouldn’t it be great if I could just take a picture of a handwritten expression and have it be recognized automatically? Can you use computer vision to recognize handwritten mathematical expressions? In this project, we will prove that we can!
 
 ### 2. Project goals
-- Building model to classify **Handwritten Mathematical Expressions** (Numbers and Operators) images.
+- Building models to classify **Handwritten Mathematical Expressions** (Numbers and Operators) images.
 
 - Making a **Web Flask application** so user can upload the images and perform calculation.
 
@@ -46,4 +46,31 @@ During the data cleanning process, we can see that it is biased for some of the 
 ### Dataset
 ### Model performance summary
 ![](https://i.imgur.com/pSWkopG.png)
+## BUILDING THE FLASK APP
+### How to run the Flask App locally
+```
+virtualenv env
+source env/bin/activate
+
+# For window
+set FLASK_APP=app.py
+set FLASK_ENV=development
+export FLASK_DEBUG=1
+flask run
+
+# For Ubuntu
+export FLASK_APP=app.py
+export FLASK_ENV=development
+export FLASK_DEBUG=1
+flask run
+```
+### Deploy the App to Google Cloud Platform
+
+```
+gcloud app deploy
+```
+
 ## CONCLUSION
+We successfully builts 2 models to classify **Handwritten Mathematical Expressions** (Numbers and Operators) images with high accuracy of **97%** (for predicting numbers) and accuracy of **94.88%** (for predicting math operators).
+
+In addition, we also **built a Flask application** so user user can upload the images and perform calculation.
