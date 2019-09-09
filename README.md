@@ -45,18 +45,21 @@ During the data cleanning process, we can see that it is biased for some of the 
 ## BUILDING MODELS
 In this project, we only built the model for recognizing math operators. We used prebuilt handwritten number recognition model from our previous project (MNIST project).
 
-### 1. Load and preprocess images
-**Extracting Features**
+### 1. Extracting Features
 
 We can use contour extraction to obtain features.
 - Invert the image and then convert it to a binary image because contour extraction gives the best result when the object is white, and surrounding is black.
-- To find contours use ‘findContour’ function. For features, obtain the bounding rectangle of contour using ‘boundingRect’ function (Bounding rectangle is the smallest horizontal rectangle enclosing the entire contour).
+- To find contours use `findContour` function. For features, obtain the bounding rectangle of contour using `boundingRect` function (Bounding rectangle is the smallest horizontal rectangle enclosing the entire contour).
 - Since each image in our dataset contains only one symbol/digit, we only need the bounding rectangle of maximum size. For this purpose, we calculate the area of the bounding rectangle of each contour and select the rectangle with maximum area.
-- Now, resize the maximum area bounding rectangle to 28 by 28. Reshape it to 784 by 1. So there will be now 784-pixel values or features. Now, give the corresponding label to it (For e.g., for 0–9 images same label as their digit, for – assign label 10, for + assign label 11, for times assign label 12). So now our dataset contains 784 features column and one label column.
-- After extracting features, save the data to a CSV file.
+- We esize the maximum area bounding rectangle to `28` by `28`. Reshape it to `784` by `1`. So there were `784-pixel` values or features. We gave the corresponding label to it . So our dataset contained `784` features column and one label column.
+- After extracting features, save the data to a `csv` file.
 
-### 2. Training model
+### 2. Building and training model
+We decided to build a LinearSVC model for this problem.
+
 ```python
+from sklearn.svm import LinearSVC
+
 # Create an linear SVM object
 clf = LinearSVC()
 
@@ -69,7 +72,7 @@ joblib.dump(clf, "model_cls_operator.pkl", compress=3)
 ### 3. Model performance summary
 ![](https://i.imgur.com/gLsJMDw.png)
 
-We successfully built a model with accuracy of 94.88% (for predicting math operators) which can be used together with a previously built model to classify Handwritten Mathematical Expressions (Numbers and Operators) images.
+We successfully built **a Linear SVC model** with **accuracy of 94.88%** (for predicting math operators) which can be used together with a previously built model to classify Handwritten Mathematical Expressions (Numbers and Operators) images.
 
 ### 4. Making prediction and recognition
 We perform our prediction with the assumption that we only have the calculation consists of 1 digit numbers, and one of 4 math operators (`+`, `-`, `*`, `/`) followed after the number, no additional math symbols are used. 
