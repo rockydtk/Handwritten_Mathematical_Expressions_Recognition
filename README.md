@@ -68,6 +68,9 @@ joblib.dump(clf, "model_cls_operator.pkl", compress=3)
 ```
 ### 3. Model performance summary
 ![](https://i.imgur.com/gLsJMDw.png)
+
+We successfully built a model with accuracy of 94.88% (for predicting math operators) which can be used together with a previously built model to classify Handwritten Mathematical Expressions (Numbers and Operators) images.
+
 ### 4. Making prediction and recognition
 We perform our prediction with the assumption that we only have the calculation consists of 1 digit numbers, and one of 4 math operators (`+`, `-`, `*`, `/`) followed after the number, no additional math symbols are used. 
 For example: `1 * 2 - 3 + 4`
