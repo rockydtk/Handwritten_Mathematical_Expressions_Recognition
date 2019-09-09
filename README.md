@@ -43,7 +43,9 @@ For simplicity, in this project, we only take into account 4 math operators: `pl
 During the data cleanning process, we can see that it is biased for some of the digits/symbols, as it contains 12000 images for some symbol and 3000 images for others. To remove this bias, reduce the number of images in each folder to approximately 4000.
 
 ## BUILDING MODELS
-In this project, we only built the model for recognizing math operators. We used prebuilt handwritten number recognition model from our previous project (MNIST project).
+You can have more details by walking through our 2 Jupyter notebooks.
+
+In this project, we only built the model for recognizing math operators. We used prebuilt handwritten number recognition model `handwritten_model.h5` from our previous project [(MNIST project)](). 
 
 ### 1. Extracting Features
 
@@ -55,7 +57,7 @@ We can use contour extraction to obtain features.
 - After extracting features, save the data to a `csv` file.
 
 ### 2. Building and training model
-We decided to build a LinearSVC model for this problem.
+We decided to build a **LinearSVC model** for this problem.
 
 ```python
 from sklearn.svm import LinearSVC
@@ -75,6 +77,7 @@ joblib.dump(clf, "model_cls_operator.pkl", compress=3)
 We successfully built **a Linear SVC model** with **accuracy of 94.88%** (for predicting math operators) which can be used together with a previously built model to classify Handwritten Mathematical Expressions (Numbers and Operators) images.
 
 ### 4. Making prediction and recognition
+
 We perform our prediction with the assumption that we only have the calculation consists of 1 digit numbers, and one of 4 math operators (`+`, `-`, `*`, `/`) followed after the number, no additional math symbols are used. 
 For example: `1 * 2 - 3 + 4`
 
