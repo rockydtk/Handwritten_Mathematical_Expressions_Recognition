@@ -30,8 +30,14 @@ Main steps:
 
 ## COLLECTING DATA
 ### 1. The Handwritten math symbols dataset
-[The Kaggle Dataset](https://www.kaggle.com/xainano/handwrittenmathsymbols) consists of `jpg` files(45x45). It includes basic Greek alphabet symbols like: alpha, beta, gamma, mu, sigma, phi and theta. English alphanumeric symbols are included. All math operators, set operators. Basic pre-defined math functions like: `log`, `lim`, `cos`, `sin`, `tan`. Math symbols like: `\int`, `\sum`, `\sqrt`, `\delta` and more.
-For simplicity, in this project, we only take into account 4 math operators: `plus`,`minus`,`addition`, and`division`.
+[The Kaggle Dataset](https://www.kaggle.com/xainano/handwrittenmathsymbols) consists of `jpg` files (45x45). It includes:
+- Basic Greek alphabet symbols like: `alpha`, `beta`, `gamma`, `mu`, `sigma`, `phi` and `theta`
+- English alphanumeric symbols
+- All math operators and set operators
+- Basic pre-defined math functions like: `log`, `lim`, `cos`, `sin`, `tan`
+- Math symbols like: `\int`, `\sum`, `\sqrt`, `\delta` and more.
+
+For simplicity, in this project, we only take into account 4 math operators: `plus`,`minus`,`addition`, and `division`.
 
 ### 2. Data Collection process 
 During the data cleanning process, some inappropriate images were removed from the dataset
