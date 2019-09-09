@@ -71,6 +71,6 @@ gcloud app deploy
 ```
 
 ## CONCLUSION
-We successfully builts 2 models to classify **Handwritten Mathematical Expressions** (Numbers and Operators) images with high accuracy of **97%** (for predicting numbers) and accuracy of **94.88%** (for predicting math operators).
+We successfully builts 2 models which are used together to classify **Handwritten Mathematical Expressions** (Numbers and Operators) images with high accuracy of **97%** (for predicting numbers) and accuracy of **94.88%** (for predicting math operators).
 
 In addition, we also **built a Flask application** so user user can upload the images and perform calculation.
