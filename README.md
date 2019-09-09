@@ -40,11 +40,7 @@ Main steps:
 For simplicity, in this project, we only take into account 4 math operators: `plus`,`minus`,`addition`, and `division`.
 
 ### 2. Data Collection process 
-During the data cleanning process, some inappropriate images were removed from the dataset
-    
-## BUILDING MODEL
-
-
+During the data cleanning process, we can see that it is biased for some of the digits/symbols, as it contains 12000 images for some symbol and 3000 images for others. To remove this bias, reduce the number of images in each folder to approximately 4000.
 
 ## BUILDING MODELS
 ### Dataset
